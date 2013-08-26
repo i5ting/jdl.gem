@@ -18,6 +18,7 @@ option_parser = OptionParser.new do |opts|
   options[:path] = '.'  
   options[:file_ex] = 'js'
   options[:output_name] = 'jdl.js'
+  options[:debug] = false
   # Option 作为flag，带一组用逗号分割的arguments，用于将arguments作为数组解析
   opts.on('-t path,file_ex,output_name', '--tranfer path,file_ex,output_name', Array, 'List of 3 arguments') do |value|
      options[:array] = value
@@ -28,33 +29,34 @@ option_parser = OptionParser.new do |opts|
      options[:output_name] = options[:array][2]
   end
   
-  opts.on('-p', '--path', 'Set options as path') do |value|
+  opts.on('-p path', '--path path', 'Set options as path') do |value|
     # 这个部分就是使用这个Option后执行的代码
-    options[:path] = value  
-    
+    options[:path] = value 
   end
-  opts.on('-e', '--file_ex', 'Set options as file_ex') do |value|
+  opts.on('-e ex', '--file_ex ex', 'Set options as file_ex') do |value|
     # 这个部分就是使用这个Option后执行的代码
     options[:file_ex] = value  
   end
   
-  opts.on('-o', '--output', 'Set options as output_name') do |value|
+  opts.on('-o output', '--output output', 'Set options as output_name') do |value|
     # 这个部分就是使用这个Option后执行的代码
     options[:output_name] = value  
   end
   
-  
-  path = options[:path]
-  file_ex = options[:file_ex]
-  output_name = options[:output_name]
-  
-  File.delete(output_name) if File.exist?(output_name)
-  Jdl.getfiles(path ,file_ex ,output_name)
-  
+  opts.on('-d', '--verbose', 'Set options as verbose') do |value|
+    # 这个部分就是使用这个Option后执行的代码
+    options[:debug] = value 
+  end
 end.parse!
 
 # puts options.inspect
+path = options[:path]
+file_ex = options[:file_ex]
+output_name = options[:output_name]
 
+p "path = #{path}"                if(options[:debug])
+p "fname = #{file_ex}"            if(options[:debug])
+p "output_name = #{output_name}"  if(options[:debug])
 
-
-
+File.delete(output_name) if File.exist?(output_name)
+Jdl.getfiles(path ,file_ex ,output_name)

@@ -8,9 +8,9 @@ module Jdl
   # #>chmod 777 runtest.sh
   #
   def self.getfiles(path,fname,output_name)
+
     re = []
     allre = []
-    ff = []
     Dir.foreach(path) do |f|
     	allre << f
     end
@@ -35,13 +35,12 @@ module Jdl
         self.print_arr(fullfilename,output_name)
         # p  ff
       	re << f
-        ff << fullfilename
+        # p fullfilename
       end
     end
     
     # p extname
     return re
-    # return ff
   end
  
 
