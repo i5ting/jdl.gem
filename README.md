@@ -3,6 +3,8 @@
 <!-- TODO: Write a gem description -->
 根据指定目录，扫描内部扩展名为*的所有文件，并输出到jdl.js内，主要用于js测试
 
+创建jdl.gem的初衷是我在给backbone app增加qunit测试的时候，每次都要有很多引用，在app里要写一次，在test里又要写一次，而且每次的相对路径都不一样的，这让人十分恼火...于是...
+
 TODO:
 
 
