@@ -71,9 +71,6 @@ Or install it yourself as:
 
     ruby -Ilib bin/jdl -p .  -t t.txt
 
-## Test
-
-    ruby -Ilib bin/jdl
 
 ## Contributing
 
