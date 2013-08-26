@@ -11,6 +11,7 @@ TODO:
 ## History
 
 - 增加生成模板，可以从本地读取(v0.0.4已实现)
+- 增加-v查看版本，可以从本地读取(v0.0.5已实现)
 
 ## Installation
 
@@ -36,6 +37,7 @@ Or install it yourself as:
       -o, --output                     Set options as output_name
       -t, --template t_name            Set options as template_name
       -d. --verbose                    print debug log
+      -v, --version                    Show version
       
       
 - '-p' 指定扫描路径       ：  默认值   .
@@ -43,6 +45,7 @@ Or install it yourself as:
 - '-o' 指定输出文件名称    ： 默认值   jdl.js
 - '-t' 指定模板名称       ： 默认值   无
 - '-d' 是否打印日志       ： 默认值   false
+- '-v' 是否打印版本       ： 默认值   无
 
 
 ### 模板用法
