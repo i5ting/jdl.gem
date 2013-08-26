@@ -20,8 +20,8 @@ Or install it yourself as:
 ## Usage
 
 
-  ➜  jdl git:(master) ✗ jdl --help
-  import js from directory loader .
+    ➜  jdl git:(master) ✗ jdl --help
+      import js from directory loader .
       -p, --path                       Set options as path
       -e, --file_ex                    Set options as file_ex
       -o, --output                     Set options as :output_name
@@ -33,7 +33,7 @@ Or install it yourself as:
 
 ## Test
 
-  ruby -Ilib bin/jdl
+    ruby -Ilib bin/jdl
 
 ## Contributing
 
