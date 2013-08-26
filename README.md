@@ -31,7 +31,8 @@ Or install it yourself as:
       import js from directory loader .
       -p, --path                       Set options as path
       -e, --file_ex                    Set options as file_ex
-      -o, --output                     Set options as :output_name
+      -o, --output                     Set options as output_name
+      -t, --template t_name            Set options as template_name
       -d. --verbose                    print debug log
       
       
