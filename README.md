@@ -37,6 +37,35 @@ Or install it yourself as:
 - '-o' 指定输出文件名称    ： 默认值   jdl.js
 - '-d' 是否打印日志       ： 默认值   false
 
+
+### 模板用法
+
+创建t.txt 
+
+    <aa>##item##<aa>
+    
+生成的文件
+
+    ➜  jdl git:(master) ✗ cat jdl.js 
+    <aa>./test/collection.js<aa>
+    <aa>./test/environment.js<aa>
+    <aa>./test/events.js<aa>
+    <aa>./test/model.js<aa>
+    <aa>./test/noconflict.js<aa>
+    <aa>./test/router.js<aa>
+    <aa>./test/sync.js<aa>
+    <aa>./test/vendor/backbone.js<aa>
+    <aa>./test/vendor/jquery.js<aa>
+    <aa>./test/vendor/json2.js<aa>
+    <aa>./test/vendor/qunit.js<aa>
+    <aa>./test/vendor/runner.js<aa>
+    <aa>./test/vendor/underscore.js<aa>
+    <aa>./test/view.js<aa>
+
+测试方法
+
+    ruby -Ilib bin/jdl -p .  -t t.txt
+
 ## Test
 
     ruby -Ilib bin/jdl

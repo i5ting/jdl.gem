@@ -38,6 +38,11 @@ option_parser = OptionParser.new do |opts|
     options[:file_ex] = value  
   end
   
+  opts.on('-t t_name', '--template t_name', 'Set options as template_name') do |value|
+    # 这个部分就是使用这个Option后执行的代码
+    options[:template_name] = value  
+  end
+  
   opts.on('-o output', '--output output', 'Set options as output_name') do |value|
     # 这个部分就是使用这个Option后执行的代码
     options[:output_name] = value  
@@ -50,13 +55,5 @@ option_parser = OptionParser.new do |opts|
 end.parse!
 
 # puts options.inspect
-path = options[:path]
-file_ex = options[:file_ex]
-output_name = options[:output_name]
 
-p "path = #{path}"                if(options[:debug])
-p "fname = #{file_ex}"            if(options[:debug])
-p "output_name = #{output_name}"  if(options[:debug])
-
-File.delete(output_name) if File.exist?(output_name)
-Jdl.getfiles(path ,file_ex ,output_name)
+Jdl.parse(options)
