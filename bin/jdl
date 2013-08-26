@@ -1,0 +1,60 @@
+#!/usr/bin/env ruby  
+# encoding: utf-8
+
+require 'jdl'  
+
+require 'optparse'
+
+options = {}
+option_parser = OptionParser.new do |opts|
+  # 这里是这个命令行工具的帮助信息
+  opts.banner = 'import js from directory loader .'
+
+  # opts.on('-f sourceFileNAME', '--name sourceFileNAME', 'Pass-in source file name') do |value|
+  #   # options[:fname] = value
+  #  
+  #   # Mdpreview.hi(path+'/'+value)
+  # end
+  options[:path] = '.'  
+  options[:file_ex] = 'js'
+  options[:output_name] = 'jdl.js'
+  # Option 作为flag，带一组用逗号分割的arguments，用于将arguments作为数组解析
+  opts.on('-t path,file_ex,output_name', '--tranfer path,file_ex,output_name', Array, 'List of 3 arguments') do |value|
+     options[:array] = value
+     # p 'start'
+     #Dir.foreach(".") {|x| puts "Got #{x}" }
+     options[:path]  = options[:array][0]
+     options[:file_ex] = options[:array][1]
+     options[:output_name] = options[:array][2]
+  end
+  
+  opts.on('-p', '--path', 'Set options as path') do |value|
+    # 这个部分就是使用这个Option后执行的代码
+    options[:path] = value  
+    
+  end
+  opts.on('-e', '--file_ex', 'Set options as file_ex') do |value|
+    # 这个部分就是使用这个Option后执行的代码
+    options[:file_ex] = value  
+  end
+  
+  opts.on('-o', '--output', 'Set options as output_name') do |value|
+    # 这个部分就是使用这个Option后执行的代码
+    options[:output_name] = value  
+  end
+  
+  
+  path = options[:path]
+  file_ex = options[:file_ex]
+  output_name = options[:output_name]
+  
+  File.delete(output_name) if File.exist?(output_name)
+  Jdl.getfiles(path ,file_ex ,output_name)
+  
+end.parse!
+
+# puts options.inspect
+
+
+
+
