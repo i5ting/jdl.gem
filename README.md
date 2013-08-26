@@ -42,3 +42,13 @@ Or install it yourself as:
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## License
+
+this project is released under the MIT license:
+
+http://www.opensource.org/licenses/mit-license.php
+
+
+## 欢迎fork和反馈
+在issue提问或邮件shiren1118@126.com
