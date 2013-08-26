@@ -3,6 +3,10 @@
 <!-- TODO: Write a gem description -->
 根据指定目录，扫描内部扩展名为*的所有文件，并输出到jdl.js内，主要用于js测试
 
+TODO:
+
+- 增加生成模板，可以从本地读取
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -25,11 +29,13 @@ Or install it yourself as:
       -p, --path                       Set options as path
       -e, --file_ex                    Set options as file_ex
       -o, --output                     Set options as :output_name
+      -d. --verbose                    print debug log
       
       
 - '-p' 指定扫描路径       ：  默认值   .
 - '-e' 指定扫描文件的扩展名 ： 默认值   js
 - '-o' 指定输出文件名称    ： 默认值   jdl.js
+- '-d' 是否打印日志       ： 默认值   false
 
 ## Test
 
