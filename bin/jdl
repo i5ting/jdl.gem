@@ -52,6 +52,12 @@ option_parser = OptionParser.new do |opts|
     # 这个部分就是使用这个Option后执行的代码
     options[:debug] = value 
   end
+  
+  opts.on_tail('-v', '--version', 'Show version') do
+    puts "jdl gem version: #{Jdl::VERSION}"
+    exit
+  end
+    
 end.parse!
 
 # puts options.inspect
