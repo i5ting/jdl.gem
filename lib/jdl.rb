@@ -47,7 +47,7 @@ module Jdl
 
   def self.print_arr(content,filename='jdl.js')
     f=open(filename,"a") 
-    f.puts(content) 
+    f.puts("<script src='#{content}'></script>") 
     f.close
   end
 end
