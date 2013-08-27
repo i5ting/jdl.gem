@@ -10,11 +10,6 @@ option_parser = OptionParser.new do |opts|
   # 这里是这个命令行工具的帮助信息
   opts.banner = 'import js from directory loader .'
 
-  # opts.on('-f sourceFileNAME', '--name sourceFileNAME', 'Pass-in source file name') do |value|
-  #   # options[:fname] = value
-  #  
-  #   # Mdpreview.hi(path+'/'+value)
-  # end
   options[:path] = '.'  
   options[:file_ex] = 'js'
   options[:output_name] = 'jdl.js'
