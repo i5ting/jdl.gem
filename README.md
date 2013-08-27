@@ -7,6 +7,9 @@
 
 TODO:
 
+- 过滤，在path内，但不包含v0.0.6
+- not | in
+
 
 ## History
 
